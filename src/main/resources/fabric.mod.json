@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "wpr",
+  "version": "${version}",
+  "name": "wpr",
+  "description": "where are you right now",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/wpr/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.kill.wpr.client.WprDataGenerator"
+    ],
+    "client": [
+      "org.kill.wpr.client.WprClient"
+    ],
+    "main": [
+      "org.kill.wpr.Wpr"
+    ]
+  },
+  "mixins": [
+    "wpr.mixins.json",
+    {
+      "config": "wpr.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
